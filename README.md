@@ -34,3 +34,23 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 For any inquiries, please reach out to the repository owner, kumar-albert.
+
+
+## Architecture
+
+```mermaid
+graph LR
+    A[AI Agent]
+
+    B[MCP Client]
+    C[AWS Client]
+
+    D[MCP Server]
+    E["LLM"]
+    F[Tools / Resources]
+
+    A <--> B & C
+    B -->|Calls external tools| D --> F
+    C <--> |think based on promt and tell which tool needs to be called| E
+
+```
